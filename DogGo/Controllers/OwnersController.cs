@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DogGo.Models;
+using DogGo.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,9 +11,18 @@ namespace DogGo.Controllers
 {
     public class OwnersController : Controller
     {
+
         // GET: OwnersController
+        private readonly IOwnerRepository _ownerRepo;
+
+        // ASP.NET will give us an instance of our Owner Repository. This is called "Dependency Injection"
+        public OwnersController(IOwnerRepository ownerRepository)
+        {
+            _ownerRepo = ownerRepository;
+        }
         public ActionResult Index()
         {
+            List<Owner> owners = _ownerRepo.GetAllOwners();
             return View();
         }
 
