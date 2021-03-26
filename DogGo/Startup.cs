@@ -1,3 +1,4 @@
+using DogGo.Repos;
 using DogGo.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +26,7 @@ namespace DogGo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IWalkerRepository, WalkerRepository>();
+            services.AddTransient<IDogRepository, DogRepository>();
             services.AddTransient<IOwnerRepository, OwnerRepository>();
             services.AddControllersWithViews();
         }
