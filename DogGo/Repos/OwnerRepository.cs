@@ -31,7 +31,7 @@ namespace DogGo.Repositories
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT Id, [Name], Email, Address, Phone, NeighborhoodId
+                        SELECT Id, [Name], Email, [Address], Phone, NeighborhoodId
                         FROM Owner
                     ";
 
@@ -46,8 +46,8 @@ namespace DogGo.Repositories
                             Name = reader.GetString(reader.GetOrdinal("Name")),
                             Email = reader.GetString(reader.GetOrdinal("Email")),
                             Address = reader.GetString(reader.GetOrdinal("Address")),
+                            NeighborhoodId = reader.GetInt32(reader.GetOrdinal("NeighborhoodId")),
                             Phone = reader.GetString(reader.GetOrdinal("Phone")),
-                            NeighborhoodId = reader.GetInt32(reader.GetOrdinal("NeighborhoodId"))
                         };
 
                         owners.Add(owner);
@@ -69,7 +69,7 @@ namespace DogGo.Repositories
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT Id, [Name], Email, Address, Phone, NeighborhoodId
+                        SELECT Id, [Name], Email, [Address], Phone, NeighborhoodId
                         FROM Owner
                         WHERE Id = @id";
 
@@ -108,7 +108,7 @@ namespace DogGo.Repositories
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT Id, [Name], Email, Address, Phone, NeighborhoodId
+                        SELECT Id, [Name], Email, [Address], Phone, NeighborhoodId
                         FROM Owner
                         WHERE Email = @email";
 
@@ -146,7 +146,7 @@ namespace DogGo.Repositories
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                    INSERT INTO Owner ([Name], Email, Phone, Address, NeighborhoodId)
+                    INSERT INTO Owner ([Name], Email, Phone, [Address], NeighborhoodId)
                     OUTPUT INSERTED.ID
                     VALUES (@name, @email, @phoneNumber, @address, @neighborhoodId);
                 ";
@@ -177,7 +177,7 @@ namespace DogGo.Repositories
                             SET 
                                 [Name] = @name, 
                                 Email = @email, 
-                                Address = @address, 
+                                [Address] = @address, 
                                 Phone = @phone, 
                                 NeighborhoodId = @neighborhoodId
                             WHERE Id = @id";
