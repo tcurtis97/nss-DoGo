@@ -74,7 +74,7 @@ namespace DogGo.Repositories
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT d.Id, d.[Name], d.ImageUrl, d.Breed, d.Notes, d.OwnerId, o.[Name] AS OwnerName
+                        SELECT d.Id, d.[Name], ISNULL(d.ImageUrl, 'Missing') as ImageUrl, ISNULL(d.Breed, 'Missing') as Breed, ISNULL(d.Notes, 'Missing') as Notes, d.OwnerId, o.[Name] AS OwnerName
                         FROM Dog d 
                         JOIN Owner o ON o.Id = d.OwnerId
                     ";
