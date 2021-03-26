@@ -77,7 +77,7 @@ namespace DogGo.Repositories
                         SELECT o.Id, o.[Name], o.Email, o.[Address], o.Phone, o.NeighborhoodId, n.[Name] AS NeighborhoodName
                         FROM Owner o
                         JOIN Neighborhood n ON n.Id = o.NeighborhoodId
-                        WHERE Id = @id";
+                        WHERE o.Id = @id";
 
                     cmd.Parameters.AddWithValue("@id", id);
 
