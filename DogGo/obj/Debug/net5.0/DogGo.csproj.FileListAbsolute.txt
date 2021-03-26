@@ -424,3 +424,4 @@ C:\Users\Tim\workspace\csharp\DogGo\DogGo\bin\Debug\net5.0\runtimes\win-arm64\li
 C:\Users\Tim\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Walkers\Index.cshtml.g.cs
 C:\Users\Tim\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owners\Index.cshtml.g.cs
 C:\Users\Tim\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Walkers\Details.cshtml.g.cs
+C:\Users\Tim\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owners\Create.cshtml.g.cs
