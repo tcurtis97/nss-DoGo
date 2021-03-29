@@ -34,7 +34,7 @@ namespace DogGo.Controllers
         public ActionResult Details(int id)
         {
             Walker walker =  _walkerRepo.GetWalkerById(id);
-            List<Walk> walks = _walkRepo.GetWalksByWalkerId(Id);
+            List<Walk> walks = _walkRepo.GetWalksByWalkerId(id);
 
 
             WalkerProfileViewModel vm = new WalkerProfileViewModel()
