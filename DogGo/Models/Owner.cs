@@ -26,6 +26,7 @@ namespace DogGo.Models
         public int NeighborhoodId { get; set; }
        
         [Phone]
+        [DisplayName("Phone Number")]
         public string Phone { get; set; }
         
         
