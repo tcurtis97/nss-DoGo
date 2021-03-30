@@ -15,5 +15,7 @@ namespace DogGo.Models
         public int DogId { get; set; }
 
         public string Client { get; set; }
+
+
     }
 }
