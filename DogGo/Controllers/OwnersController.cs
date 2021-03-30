@@ -149,11 +149,13 @@ namespace DogGo.Controllers
                     return View(owner);
                 }
             }
+        //Get: Login
         public ActionResult Login()
         {
             return View();
         }
 
+        //Post: Login
         [HttpPost]
         public async Task<ActionResult> Login(LoginViewModel viewModel)
         {
